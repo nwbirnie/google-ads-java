@@ -31,6 +31,11 @@ plugins {
 description = 'Google Ads API client library for Java'
 
 sourceSets {
+  main {
+    java {
+      srcDir new File(project.buildDir, "generated/source")
+    }
+  }
   test {
     proto {
       srcDir 'src/test/resources/protos/'
@@ -63,10 +68,9 @@ configurations {
 }
 
 dependencies {
+  api project(':google-ads-codegen')
   implementation 'io.netty:netty-tcnative-boringssl-static:2.0.26.Final'
   implementation 'org.slf4j:slf4j-api:1.7.25'
-  implementation project(':google-ads-annotation-processing')
-  annotationProcessor project(':google-ads-annotation-processing')
   annotationProcessor 'com.google.auto.value:auto-value:1.7.3'
   testImplementation 'org.hamcrest:java-hamcrest:2.0.0.0'
   testImplementation 'org.mockito:mockito-all:1.9.5'
@@ -74,6 +78,8 @@ dependencies {
   testImplementation 'io.grpc:grpc-context:1.30.0'
   testImplementation 'com.google.truth:truth:0.27'
   testImplementation 'com.google.auto.value:auto-value-annotations:1.7.3'
+  testImplementation testFixtures(project(':google-ads-stubs-v8'))
+  testImplementation testFixtures(project(':google-ads-stubs-v7'))
   shadeTest 'junit:junit:4.13.1'
 }
 
@@ -82,6 +88,15 @@ task functionalTest(type: Test) {
   testClassesDirs = sourceSets.functionalTest.output.classesDirs
   classpath = sourceSets.functionalTest.runtimeClasspath
 }
+
+task copyCatalogCodegen(type: Copy) {
+  from new File(project.parent.findProject("google-ads-codegen").buildDir, "generated/catalog")
+  into new File(project.buildDir, "generated/source")
+
+  dependsOn ":google-ads-codegen:build"
+}
+
+project.build.dependsOn(copyCatalogCodegen)
 
 // --------------------- third_party directory generation ----------------------
 

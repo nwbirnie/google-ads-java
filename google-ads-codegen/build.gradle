@@ -1,0 +1,25 @@
+plugins {
+    id 'com.google.api-ads.java-conventions'
+}
+
+dependencies {
+    api project(":google-ads-stubs-lib")
+    api project(":google-ads-stubs-v7")
+    api project(":google-ads-stubs-v8")
+    implementation 'org.slf4j:slf4j-api:1.7.25'
+    implementation 'com.squareup:javapoet:1.11.1'
+    implementation 'org.reflections:reflections:0.9.11'
+    testImplementation 'com.google.api:gax-grpc:1.65.1:testlib'
+    testImplementation 'org.hamcrest:java-hamcrest:2.0.0.0'
+    testImplementation 'org.mockito:mockito-all:1.9.5'
+}
+
+task generateCode(type: JavaExec) {
+    group = "Execution"
+    description = "Run the main class with JavaExecTask"
+    classpath = sourceSets.main.runtimeClasspath
+    main = "com.google.ads.googleads.codegen.AvailableVersionsCodeGenerator"
+    args = [new File(project.buildDir, "generated/catalog").getAbsolutePath()]
+}
+
+project.build.dependsOn(generateCode)

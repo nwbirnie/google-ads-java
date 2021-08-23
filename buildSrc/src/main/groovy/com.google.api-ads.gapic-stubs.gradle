@@ -1,0 +1,16 @@
+plugins {
+    id 'com.google.api-ads.java-conventions'
+    id 'java-test-fixtures'
+}
+
+dependencies {
+    implementation project(":google-ads-stubs-lib")
+    implementation 'org.slf4j:slf4j-api:1.7.25'
+    testFixturesImplementation 'com.google.api:gax-grpc:1.65.1:testlib'
+    testFixturesImplementation 'com.google.api:gax-grpc:1.65.1'
+    testFixturesImplementation 'org.hamcrest:java-hamcrest:2.0.0.0'
+    testFixturesImplementation 'org.mockito:mockito-all:1.9.5'
+    testFixturesImplementation 'junit:junit:4.13.1'
+}
+
+configurations.testImplementation.extendsFrom(configurations.testFixturesImplementation)

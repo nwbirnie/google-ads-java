@@ -1,0 +1,8 @@
+plugins {
+    id 'com.google.api-ads.java-conventions'
+}
+
+dependencies {
+    implementation 'org.slf4j:slf4j-api:1.7.25'
+    testImplementation 'org.mockito:mockito-all:1.9.5'
+}
