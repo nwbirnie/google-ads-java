@@ -12,9 +12,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package com.google.ads.googleads.v8.errors;
+package com.google.ads.googleads.v7.errors;
 
-import com.google.ads.googleads.lib.BaseGoogleAdsException;
+import com.google.ads.googleads.lib.stubs.exceptions.BaseGoogleAdsException;
 import com.google.api.gax.rpc.ApiException;
 import com.google.protobuf.InvalidProtocolBufferException;
 import io.grpc.Metadata;
@@ -54,7 +54,7 @@ public class GoogleAdsException extends BaseGoogleAdsException {
 
     @Override
     public Metadata.Key<byte[]> getTrailerKey() {
-      return createKey("google.ads.googleads.v8.errors.googleadsfailure-bin");
+      return createKey("google.ads.googleads.v7.errors.googleadsfailure-bin");
     }
   }
 }

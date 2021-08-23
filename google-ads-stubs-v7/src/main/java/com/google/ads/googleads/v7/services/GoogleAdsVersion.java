@@ -12,19 +12,18 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package com.google.ads.googleads.v8.services;
+package com.google.ads.googleads.v7.services;
 
-import com.google.ads.googleads.lib.catalog.annotation.ServiceClientDescriptor;
-import com.google.ads.googleads.annotations.api.VersionDescriptor;
-import com.google.ads.googleads.v8.errors.GoogleAdsException;
+import com.google.ads.googleads.lib.stubs.annotations.ServiceClientDescriptor;
+import com.google.ads.googleads.lib.stubs.annotations.VersionDescriptor;
+import com.google.ads.googleads.v7.errors.GoogleAdsException;
+import com.google.auto.service.AutoService;
 
-@VersionDescriptor(versionName = "v8",
+@VersionDescriptor(versionName = "v7",
     googleAdsExceptionFactory = GoogleAdsException.Factory.class)
+@AutoService(VersionDescriptor.class)
 public interface GoogleAdsVersion {
  
-        @ServiceClientDescriptor(settingsClass = AccessibleBiddingStrategyServiceSettings.class)
-        AccessibleBiddingStrategyServiceClient createAccessibleBiddingStrategyServiceClient();
-         
         @ServiceClientDescriptor(settingsClass = AccountBudgetProposalServiceSettings.class)
         AccountBudgetProposalServiceClient createAccountBudgetProposalServiceClient();
          
@@ -88,20 +87,11 @@ public interface GoogleAdsVersion {
         @ServiceClientDescriptor(settingsClass = AgeRangeViewServiceSettings.class)
         AgeRangeViewServiceClient createAgeRangeViewServiceClient();
          
-        @ServiceClientDescriptor(settingsClass = AssetFieldTypeViewServiceSettings.class)
-        AssetFieldTypeViewServiceClient createAssetFieldTypeViewServiceClient();
-         
         @ServiceClientDescriptor(settingsClass = AssetServiceSettings.class)
         AssetServiceClient createAssetServiceClient();
          
         @ServiceClientDescriptor(settingsClass = BatchJobServiceSettings.class)
         BatchJobServiceClient createBatchJobServiceClient();
-         
-        @ServiceClientDescriptor(settingsClass = BiddingDataExclusionServiceSettings.class)
-        BiddingDataExclusionServiceClient createBiddingDataExclusionServiceClient();
-         
-        @ServiceClientDescriptor(settingsClass = BiddingSeasonalityAdjustmentServiceSettings.class)
-        BiddingSeasonalityAdjustmentServiceClient createBiddingSeasonalityAdjustmentServiceClient();
          
         @ServiceClientDescriptor(settingsClass = BiddingStrategyServiceSettings.class)
         BiddingStrategyServiceClient createBiddingStrategyServiceClient();
@@ -178,12 +168,6 @@ public interface GoogleAdsVersion {
         @ServiceClientDescriptor(settingsClass = ConversionUploadServiceSettings.class)
         ConversionUploadServiceClient createConversionUploadServiceClient();
          
-        @ServiceClientDescriptor(settingsClass = ConversionValueRuleServiceSettings.class)
-        ConversionValueRuleServiceClient createConversionValueRuleServiceClient();
-         
-        @ServiceClientDescriptor(settingsClass = ConversionValueRuleSetServiceSettings.class)
-        ConversionValueRuleSetServiceClient createConversionValueRuleSetServiceClient();
-         
         @ServiceClientDescriptor(settingsClass = CurrencyConstantServiceSettings.class)
         CurrencyConstantServiceClient createCurrencyConstantServiceClient();
          
@@ -228,9 +212,6 @@ public interface GoogleAdsVersion {
          
         @ServiceClientDescriptor(settingsClass = DetailPlacementViewServiceSettings.class)
         DetailPlacementViewServiceClient createDetailPlacementViewServiceClient();
-         
-        @ServiceClientDescriptor(settingsClass = DetailedDemographicServiceSettings.class)
-        DetailedDemographicServiceClient createDetailedDemographicServiceClient();
          
         @ServiceClientDescriptor(settingsClass = DisplayKeywordViewServiceSettings.class)
         DisplayKeywordViewServiceClient createDisplayKeywordViewServiceClient();
@@ -319,9 +300,6 @@ public interface GoogleAdsVersion {
         @ServiceClientDescriptor(settingsClass = KeywordPlanServiceSettings.class)
         KeywordPlanServiceClient createKeywordPlanServiceClient();
          
-        @ServiceClientDescriptor(settingsClass = KeywordThemeConstantServiceSettings.class)
-        KeywordThemeConstantServiceClient createKeywordThemeConstantServiceClient();
-         
         @ServiceClientDescriptor(settingsClass = KeywordViewServiceSettings.class)
         KeywordViewServiceClient createKeywordViewServiceClient();
          
@@ -396,15 +374,6 @@ public interface GoogleAdsVersion {
          
         @ServiceClientDescriptor(settingsClass = ShoppingPerformanceViewServiceSettings.class)
         ShoppingPerformanceViewServiceClient createShoppingPerformanceViewServiceClient();
-         
-        @ServiceClientDescriptor(settingsClass = SmartCampaignSearchTermViewServiceSettings.class)
-        SmartCampaignSearchTermViewServiceClient createSmartCampaignSearchTermViewServiceClient();
-         
-        @ServiceClientDescriptor(settingsClass = SmartCampaignSettingServiceSettings.class)
-        SmartCampaignSettingServiceClient createSmartCampaignSettingServiceClient();
-         
-        @ServiceClientDescriptor(settingsClass = SmartCampaignSuggestServiceSettings.class)
-        SmartCampaignSuggestServiceClient createSmartCampaignSuggestServiceClient();
          
         @ServiceClientDescriptor(settingsClass = ThirdPartyAppAnalyticsLinkServiceSettings.class)
         ThirdPartyAppAnalyticsLinkServiceClient createThirdPartyAppAnalyticsLinkServiceClient();
