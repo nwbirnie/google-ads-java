@@ -1,3 +1,7 @@
+15.0.1 - 2021-08-12
+-------------------
+- Added and updated examples for Google Ads API v8.1.
+
 15.0.0 - 2021-08-12
 -------------------
 - Added and updated examples for Google Ads API v8.1.
