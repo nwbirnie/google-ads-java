@@ -11,6 +11,10 @@
     <file>animal-sniffer-annotations-1.19.jar</file>
     <license name='MIT license' url='http://www.opensource.org/licenses/mit-license.php' />
   </dependency>
+  <dependency name='com.google.api-ads:google-ads-annotation-processing:15.0.1-SNAPSHOT'>
+    <file>google-ads-annotation-processing-15.0.1-SNAPSHOT.jar</file>
+    <license name='No license found' />
+  </dependency>
   <dependency name='com.google.auto.value:auto-value-annotations:1.7.4'>
     <file>auto-value-annotations-1.7.4.jar</file>
     <license name='Apache 2.0' url='http://www.apache.org/licenses/LICENSE-2.0.txt' />
@@ -106,10 +110,6 @@
   <dependency name='com.google.auth:google-auth-library-credentials:0.24.0'>
     <file>google-auth-library-credentials-0.24.0.jar</file>
     <license name='BSD New license' url='http://opensource.org/licenses/BSD-3-Clause' />
-  </dependency>
-  <dependency name='com.google.api-ads:google-ads-annotation-processing:11.0.1-SNAPSHOT'>
-    <file>google-ads-annotation-processing-11.0.1-SNAPSHOT.jar</file>
-    <license name='No license found' />
   </dependency>
   <dependency name='io.grpc:grpc-protobuf-lite:1.37.0'>
     <file>grpc-protobuf-lite-1.37.0.jar</file>
